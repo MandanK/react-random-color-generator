@@ -18,7 +18,7 @@ function ColoredDiv(userColor) {
         -webkit-transition: all 4s ease-out;
       `}
     >
-      {userColor.color}
+      Generated Color: {userColor.color}
     </div>
   );
 }
@@ -50,7 +50,7 @@ function Control() {
       </form>
       <div>
         <button onClick={() => setColor(randomColor(parameter))}>
-          Suprise Me!
+          Generate
         </button>
         <ColoredDiv color={color} />
       </div>
