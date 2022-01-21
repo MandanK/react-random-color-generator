@@ -4,6 +4,8 @@ import { css } from '@emotion/react';
 import randomColor from 'randomcolor';
 import { useState } from 'react';
 
+// The div function to change the
+// background color by user's action
 function ColoredDiv(userColor) {
   return (
     <div
@@ -12,21 +14,20 @@ function ColoredDiv(userColor) {
         height: 100px;
         font-size: 40px;
         padding: 200px 0;
+        //The background-color is replaced by the
+        //color selected by user
         background-color: ${userColor.color};
-        transition: all 4s ease-out;
-        -moz-transition: all 4s ease-out;
-        -webkit-transition: all 4s ease-out;
       `}
     >
       Generated Color: {userColor.color}
     </div>
   );
 }
-
-function Control() {
+// function to randomly generate the color, hue, luminosity
+function RandColor() {
   const [color, setColor] = useState('#009905');
-  const [hue, setHue] = useState('red'); // useState('green')
-  const [luminosity, setLuminosity] = useState('light'); // useState('dark')
+  const [hue, setHue] = useState('green');
+  const [luminosity, setLuminosity] = useState('dark');
   const parameter = {
     luminosity: luminosity,
     hue: hue,
@@ -41,7 +42,7 @@ function Control() {
         </label>
         <br />
         <label>
-          <h2>Luminosity:</h2>
+          <h2>luminosity:</h2>
           <input
             value={luminosity}
             onChange={(e) => setLuminosity(e.target.value)}
@@ -52,6 +53,7 @@ function Control() {
         <button onClick={() => setColor(randomColor(parameter))}>
           Generate
         </button>
+        {/* Defining the props of ColoredDiv */}
         <ColoredDiv color={color} />
       </div>
     </div>
@@ -62,7 +64,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Control />
+        <RandColor />
       </header>
     </div>
   );

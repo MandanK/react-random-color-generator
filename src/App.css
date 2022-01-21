@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #143102;
+  background-color: #053a1a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@
   }
 }
 
-input{
+input {
   width: 100%;
   height: 100%;
   padding: 5px 5px;
