@@ -59,7 +59,7 @@ function RandColor() {
     </div>
   );
 }
-
+// Header will only display things.
 function App() {
   return (
     <div className="App">
